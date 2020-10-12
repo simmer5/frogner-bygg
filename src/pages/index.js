@@ -4,46 +4,66 @@ import Layout from '../components/layout'
 
 import SEO from '../components/seo'
 
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { makeStyles } from '@material-ui/core/styles'
-import { Zoom } from '@material-ui/core'
+import CardMedia from '@material-ui/core/CardMedia'
+import Face from '../images/face.png'
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    backgroundColor: theme.palette.background.paper,
-  },
-  nested: {
-    paddingLeft: theme.spacing(4),
-  },
+	container: {
+		height: '100vh',
+	},
+	text: {
+		position: 'absolute',
+		color: '#f00',
+		padding: '20px',
+		left: 0,
+		zIndex: 1,
+	},
+	centerAligned: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'flex-end',
+	},
+	fotoContainer: {
+		background: 'red',
+		display: 'flex',
+		justifyContent: 'flex-end',
+	},
+	bgImageMo: {
+		marginBottom: 0,
+		width: '100%',
+		position: 'absolute',
+		bottom: 0,
+		left: '15vw',
+	},
+	bgImageDe: {
+		marginBottom: 0,
+		width: '60%',
+		alignSelf: 'flex-end',
+	},
 }))
 
 const IndexPage = () => {
-  const classes = useStyles()
-  const [features, setFeatures] = React.useState(true)
-  const [info, setInfo] = React.useState(true)
+	const classes = useStyles()
+	const matches = useMediaQuery('(min-width:600px)')
 
-  function handleClick(id) {
-    switch (id) {
-      case 'features':
-        setFeatures(!features)
-        break
-      case 'info':
-        setInfo(!info)
-        break
-      default: {
-        return
-      }
-    }
-  }
+	return (
+		<Layout>
+			<SEO title='Home' />
+			<div className={`${classes.container} ${classes.centerAligned}`}>
+				<h1 className={classes.text}>Frogner Bygg Service</h1>
 
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <h1 style={{ zIndex: 1, color: '#f00 ', Zoom: 2 }}>
-        Vi er Frogner Bygg Service
-      </h1>
-    </Layout>
-  )
+				{/* <div className={classes.fotoContainer}> */}
+				<CardMedia
+					className={!matches ? classes.bgImageMo : classes.bgImageDe}
+					component='img'
+					image={Face}
+				/>
+				{/* </div> */}
+			</div>
+		</Layout>
+	)
 }
 
 export default IndexPage
