@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { Link } from 'gatsby'
-
 import clsx from 'clsx'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
@@ -130,6 +128,7 @@ const Header = ({ siteTitle }) => {
 				}}
 			>
 				<div className={classes.drawerHeader}>
+					Frogner bygg
 					<IconButton onClick={handleDrawerClose}>
 						{theme.direction === 'ltr' ? (
 							<ChevronLeftIcon />
@@ -140,22 +139,25 @@ const Header = ({ siteTitle }) => {
 				</div>
 				<Divider />
 				<List>
-					<Link to='/'>
-						<ListItem button>
-							<ListItemIcon>
-								<HomeIcon />
-							</ListItemIcon>
-							<ListItemText>Home</ListItemText>
-						</ListItem>
-					</Link>
-					<Link to='/components'>
-						<ListItem button>
-							<ListItemIcon>
-								<ListIcon />
-							</ListItemIcon>
-							<ListItemText>Components</ListItemText>
-						</ListItem>
-					</Link>
+					<ListItem button>
+						<ListItemIcon>
+							<HomeIcon />
+						</ListItemIcon>
+						<ListItemText>Team</ListItemText>
+					</ListItem>
+
+					<ListItem button>
+						<ListItemIcon>
+							<ListIcon />
+						</ListItemIcon>
+						<ListItemText>Spennene prosjekter</ListItemText>
+					</ListItem>
+					<ListItem button>
+						<ListItemIcon>
+							<ListIcon />
+						</ListItemIcon>
+						<ListItemText>Kontakt Oss</ListItemText>
+					</ListItem>
 				</List>
 			</Drawer>
 		</div>

@@ -1,12 +1,15 @@
 import React from 'react'
 
 import Layout from '../components/layout'
+import Contacts from '../components/contacts'
 
 import SEO from '../components/seo'
 
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
 import CardMedia from '@material-ui/core/CardMedia'
+import Box from '@material-ui/core/Box'
 import Face from '../images/face.png'
 
 const useStyles = makeStyles(theme => ({
@@ -16,9 +19,13 @@ const useStyles = makeStyles(theme => ({
 	text: {
 		position: 'absolute',
 		color: '#f00',
-		padding: '20px',
+		padding: '1rem',
 		left: 0,
 		zIndex: 1,
+		width: '90vw',
+		fontSize: '2.5rem',
+		fontWeight: '900',
+		lineHeight: 'normal',
 	},
 	centerAligned: {
 		display: 'flex',
@@ -52,15 +59,26 @@ const IndexPage = () => {
 		<Layout>
 			<SEO title='Home' />
 			<div className={`${classes.container} ${classes.centerAligned}`}>
-				<h1 className={classes.text}>Frogner Bygg Service</h1>
+				<Typography component='h1' className={classes.text}>
+					<span style={{ color: 'whitesmoke' }}>Vi er</span> <br />
+					Frogner Bygg <br /> Service
+				</Typography>
 
-				{/* <div className={classes.fotoContainer}> */}
+				<Box style={{ position: 'absolute', zIndex: 1 }}>
+					<Contacts
+						short
+						anchorVertical='center'
+						anchorHorizontal='left'
+						transformVertical='center'
+						transformHorizontal='right'
+					/>
+				</Box>
+
 				<CardMedia
 					className={!matches ? classes.bgImageMo : classes.bgImageDe}
 					component='img'
 					image={Face}
 				/>
-				{/* </div> */}
 			</div>
 		</Layout>
 	)
