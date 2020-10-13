@@ -1,24 +1,24 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import Team from '../components/team'
+import Projects from '../components/projects'
+import ContactBlock from '../components/contactBlock'
+import LogoIcon from '../components/LogoIcon'
+
 import clsx from 'clsx'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import List from '@material-ui/core/List'
+import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import HomeIcon from '@material-ui/icons/Home'
-import ListIcon from '@material-ui/icons/ViewList'
 
 const drawerWidth = '90vw'
 
@@ -53,6 +53,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	drawerPaper: {
 		width: drawerWidth,
+		background: `rgba(15 15 15)`,
 	},
 	drawerHeader: {
 		display: 'flex',
@@ -76,6 +77,11 @@ const useStyles = makeStyles(theme => ({
 			duration: theme.transitions.duration.enteringScreen,
 		}),
 		marginLeft: 0,
+	},
+	text: {
+		color: '#f5f5f5',
+		fontSize: '1.5rem',
+		fontWeight: '700',
 	},
 }))
 
@@ -113,6 +119,7 @@ const Header = ({ siteTitle }) => {
 					>
 						<MenuIcon />
 					</IconButton>
+					<LogoIcon />
 					<Typography variant='h6' color='inherit'>
 						{siteTitle}
 					</Typography>
@@ -128,8 +135,10 @@ const Header = ({ siteTitle }) => {
 				}}
 			>
 				<div className={classes.drawerHeader}>
-					Frogner bygg
-					<IconButton onClick={handleDrawerClose}>
+					<Typography component='h1' className={classes.text}>
+						Frogner Bygg Service
+					</Typography>
+					<IconButton color='secondary' onClick={handleDrawerClose}>
 						{theme.direction === 'ltr' ? (
 							<ChevronLeftIcon />
 						) : (
@@ -137,28 +146,13 @@ const Header = ({ siteTitle }) => {
 						)}
 					</IconButton>
 				</div>
-				<Divider />
-				<List>
-					<ListItem button>
-						<ListItemIcon>
-							<HomeIcon />
-						</ListItemIcon>
-						<ListItemText>Team</ListItemText>
-					</ListItem>
 
-					<ListItem button>
-						<ListItemIcon>
-							<ListIcon />
-						</ListItemIcon>
-						<ListItemText>Spennene prosjekter</ListItemText>
-					</ListItem>
-					<ListItem button>
-						<ListItemIcon>
-							<ListIcon />
-						</ListItemIcon>
-						<ListItemText>Kontakt Oss</ListItemText>
-					</ListItem>
-				</List>
+				<Divider />
+				<Container style={{ display: 'flex', flexDirection: 'column' }}>
+					<Team />
+					<Projects />
+					<ContactBlock />
+				</Container>
 			</Drawer>
 		</div>
 	)

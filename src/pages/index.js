@@ -16,14 +16,25 @@ const useStyles = makeStyles(theme => ({
 	container: {
 		height: '100vh',
 	},
-	text: {
+	textMb: {
 		position: 'absolute',
 		color: '#f00',
 		padding: '1rem',
-		left: 0,
+		left: '1rem',
 		zIndex: 1,
 		width: '90vw',
-		fontSize: '2.5rem',
+		fontSize: '2.3rem',
+		fontWeight: '900',
+		lineHeight: 'normal',
+	},
+	textDe: {
+		position: 'absolute',
+		color: '#f00',
+		padding: '1rem',
+		left: '8rem',
+		zIndex: 1,
+		//width: '90vw',
+		fontSize: '4.5rem',
 		fontWeight: '900',
 		lineHeight: 'normal',
 	},
@@ -59,8 +70,11 @@ const IndexPage = () => {
 		<Layout>
 			<SEO title='Home' />
 			<div className={`${classes.container} ${classes.centerAligned}`}>
-				<Typography component='h1' className={classes.text}>
-					<span style={{ color: 'whitesmoke' }}>Vi er</span> <br />
+				<Typography
+					component='h1'
+					className={matches ? classes.textDe : classes.textMb}
+				>
+					<span style={{ color: '#f5f5f5' }}>Vi er</span> <br />
 					Frogner Bygg <br /> Service
 				</Typography>
 
