@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
 							style={{
 								paddingTop: '.5rem',
 								paddingBottom: '.5rem',
-								color: '#f00',
+
 								position: 'fixed',
 								bottom: 0,
 								width: '100vw',
