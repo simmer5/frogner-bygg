@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
 	bgImageMo: {
 		marginBottom: 0,
 		width: '100%',
-		position: 'absolute',
+		position: 'fixed',
 		bottom: 0,
 		right: 0,
 	},
