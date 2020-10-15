@@ -6,7 +6,7 @@ const date = () => {
 		<div
 			style={{
 				color: '#f00',
-				fontSize: '1.5rem',
+				fontSize: '.8rem',
 				fontWeight: '600',
 			}}
 		>

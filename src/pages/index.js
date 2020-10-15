@@ -44,7 +44,6 @@ const useStyles = makeStyles(theme => ({
 		justifyContent: 'flex-end',
 	},
 	fotoContainer: {
-		background: 'red',
 		display: 'flex',
 		justifyContent: 'flex-end',
 	},
@@ -53,7 +52,7 @@ const useStyles = makeStyles(theme => ({
 		width: '100%',
 		position: 'absolute',
 		bottom: 0,
-		left: '15vw',
+		right: 0,
 	},
 	bgImageDe: {
 		marginBottom: 0,
