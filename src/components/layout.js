@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
 			render={data => (
 				<div
 					style={{
-						minHeight: `100vh`,
+						// minHeight: `100vh`,
 						background: `#010101`,
 						display: `flex`,
 						flexDirection: `column`,

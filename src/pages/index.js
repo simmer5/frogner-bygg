@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Layout from '../components/layout'
 import Contacts from '../components/contacts'
@@ -14,7 +14,7 @@ import Face from '../images/face.png'
 
 const useStyles = makeStyles(theme => ({
 	container: {
-		height: '100vh',
+		// height: '100vh',
 	},
 	textMb: {
 		position: 'absolute',
@@ -62,13 +62,23 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const IndexPage = () => {
+	const [height, setHeight] = useState(window.innerHeight)
 	const classes = useStyles()
 	const matches = useMediaQuery('(min-width:600px)')
+
+	useEffect(() => {
+		const handleWindowHeight = () => setHeight(window.innerHeight)
+		window.addEventListener('resize', handleWindowHeight)
+		return () => window.removeEventListener('resize', handleWindowHeight)
+	}, [])
 
 	return (
 		<Layout>
 			<SEO title='Home' />
-			<div className={`${classes.container} ${classes.centerAligned}`}>
+			<div
+				style={{ height: `${height}px` }}
+				className={`${classes.container} ${classes.centerAligned}`}
+			>
 				<Typography
 					component='h1'
 					className={matches ? classes.textDe : classes.textMb}
