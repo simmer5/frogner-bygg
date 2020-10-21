@@ -62,9 +62,15 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const IndexPage = () => {
-	const [height, setHeight] = useState(window.innerHeight)
+	const [height, setHeight] = useState(`undefined`)
 	const classes = useStyles()
 	const matches = useMediaQuery('(min-width:600px)')
+
+	useEffect(() => {
+		if (height === `undefined`) {
+			setHeight(window.innerHeight)
+		}
+	}, [height])
 
 	useEffect(() => {
 		const handleWindowHeight = () => setHeight(window.innerHeight)
