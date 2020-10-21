@@ -23,6 +23,13 @@ const useStyles = makeStyles({
 		fontSize: '2.5rem',
 		fontWeight: '700',
 	},
+	'@media only screen and (max-width: 480px)': {
+		title: {
+			color: '#f00',
+			fontSize: '1.5rem',
+			fontWeight: '700',
+		},
+	},
 })
 
 const Team = () => {
@@ -63,7 +70,7 @@ const Team = () => {
 					/>
 					<CardContent>
 						<Typography gutterBottom variant='h5' component='h2'>
-							Marius Puzaras
+							Marius
 						</Typography>
 						<Typography variant='body2' color='textSecondary' component='p'>
 							Daglig leder
@@ -83,7 +90,7 @@ const Team = () => {
 					/>
 					<CardContent>
 						<Typography gutterBottom variant='h5' component='h2'>
-							Edita Puzariene
+							Edita
 						</Typography>
 						<Typography variant='body2' color='textSecondary' component='p'>
 							Daglig leder

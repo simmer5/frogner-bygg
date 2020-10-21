@@ -10,30 +10,24 @@ const useStyles = makeStyles(
 	{
 		//root: { top: '210px' },
 		paper: {
-			border: '2px solid #f00',
+			border: '1px solid #f00',
 			backgroundColor: 'rgb(1, 1, 1)',
-			//marginTop: '1rem',
 		},
 
 		iContainerShort: {
-			// display: 'flex',
-			// flexDirection: 'column',
-			// width: '100%',
-			// height: '100%',
 			zIndex: 1,
 		},
 		iFrame: {
 			background: 'none',
 			color: 'whitesmoke',
-			border: '1.5px solid white',
+			border: '1px solid white',
 			margin: '2.5rem 0.5rem',
 			padding: '1.5rem 0.2rem',
 			display: 'flex',
-			transition: 'all 300ms ease 0s',
-			'&:hover': {
-				borderStyle: 'solid',
-				transform: 'scale(1.1)',
-				cursor: 'pointer',
+		},
+		'@media only screen and (max-width: 480px)': {
+			iFrame: {
+				margin: '.5rem 0.5rem',
 			},
 		},
 		popTitle: {

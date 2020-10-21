@@ -632,4 +632,8 @@ pre tt:after {
 	body {
 		min-height: -webkit-fill-available;
 	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
 }

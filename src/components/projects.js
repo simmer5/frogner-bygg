@@ -24,6 +24,13 @@ const useStyles = makeStyles({
 		fontWeight: '700',
 		marginTop: '2rem',
 	},
+	'@media only screen and (max-width: 480px)': {
+		title: {
+			color: '#f00',
+			fontSize: '1.5rem',
+			fontWeight: '700',
+		},
+	},
 })
 
 const Projects = () => {
